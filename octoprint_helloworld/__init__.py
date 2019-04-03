@@ -5,7 +5,8 @@ import octoprint.plugin
 
 class DesktopNotificationPlugin(octoprint.plugin.StartupPlugin,
 		                        octoprint.plugin.TemplatePlugin,
-                                octoprint.plugin.AssetPlugin):
+                                octoprint.plugin.AssetPlugin,
+                                octoprint.plugin.EventHandlerPlugin):
     def on_after_startup(self):
         self._logger.info("Enabled Desktop Notification Plugin!")
 
