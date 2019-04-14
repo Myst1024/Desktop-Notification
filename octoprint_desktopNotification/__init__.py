@@ -15,5 +15,24 @@ class DesktopNotificationPlugin(octoprint.plugin.StartupPlugin,
             js=["js/notification.js"]
         )
 
+    def get_update_information(*args, **kwargs):
+    return dict(
+        updateplugindemo=dict(
+            displayName=self._plugin_name,
+            displayVersion=self._plugin_version,
+
+            type="github_release",
+            current=self._plugin_version,
+            user="myst1024",
+            repo="OctoPrint-UpdatePluginDemo",
+
+            pip="https://github.com/Myst1024/Desktop-Notification/archive/{target}.zip"
+        )
+    )
+
 __plugin_name__ = "Desktop Notification"
 __plugin_implementation__ = DesktopNotificationPlugin()
+__plugin_version__ = "1.0.0"
+__plugin_hooks__ = {
+"octoprint.plugin.softwareupdate.check_config": get_update_information
+}
