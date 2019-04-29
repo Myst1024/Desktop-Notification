@@ -16,19 +16,19 @@ class DesktopNotificationPlugin(octoprint.plugin.StartupPlugin,
         )
 
     def get_update_information(*args, **kwargs):
-    return dict(
-        updateplugindemo=dict(
-            displayName=self._plugin_name,
-            displayVersion=self._plugin_version,
+        return dict(
+            updateplugindemo=dict(
+                displayName=self._plugin_name,
+                displayVersion=self._plugin_version,
 
-            type="github_release",
-            current=self._plugin_version,
-            user="myst1024",
-            repo="OctoPrint-UpdatePluginDemo",
+                type="github_release",
+                current=self._plugin_version,
+                user="myst1024",
+                repo="Desktop-Notification",
 
-            pip="https://github.com/Myst1024/Desktop-Notification/archive/{target}.zip"
+                pip="https://github.com/Myst1024/Desktop-Notification/archive/{target}.zip"
+            )
         )
-    )
 
 __plugin_name__ = "Desktop Notification"
 __plugin_implementation__ = DesktopNotificationPlugin()
