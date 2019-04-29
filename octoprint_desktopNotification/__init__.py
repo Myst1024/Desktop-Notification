@@ -23,7 +23,7 @@ class DesktopNotificationPlugin(octoprint.plugin.StartupPlugin,
 
                 type="github_release",
                 current=self._plugin_version,
-                user="myst1024",
+                user="Myst1024",
                 repo="Desktop-Notification",
 
                 pip="https://github.com/Myst1024/Desktop-Notification/archive/{target}.zip"
